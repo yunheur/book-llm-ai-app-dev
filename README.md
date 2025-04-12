@@ -1,5 +1,61 @@
-<img src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FKsHxQ%2FbtsIBXzxCtM%2FRL8xURyDrvb6LICHZH9EE0%2Fimg.png"></img><br/>
+<img src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FKsHxQ%2FbtsIBXzxCtM%2FRL8xURyDrvb6LICHZH9EE0%2Fimg.png" height="200px"></img><br/>
 # LLM을 활용한 실전 AI 애플리케이션 개발
+
+## Setup
+```sh
+# 가상환경 생성
+cd [프로젝트명]
+uv venv --python 3.12
+
+# 패키지 설치
+uv sync
+
+# torch cuda 사용가능한지 확인
+uv run python -c "import torch; print(torch.cuda.is_available())"
+True
+```
+
+## 챕터별로 사용하는 패키지 리스트
+챕터를 uv 명령어로 아래의 패키지들을 설치해가면서 진행한다.
+```
+# ch3
+!pip install transformers==4.40.1 datasets==2.19.0 huggingface_hub==0.23.0 -qqq
+
+# ch5
+!pip install transformers==4.40.1 datasets==2.19.0 accelerate==0.30.0 peft==0.10.0 bitsandbytes==0.43.1 -qqq
+
+# ch6
+!pip install transformers==4.40.1 bitsandbytes==0.43.1 accelerate==0.29.3 datasets==2.19.0 tiktoken==0.6.0 huggingface_hub==0.22.2 autotrain-advanced==0.7.77 -qqq
+!pip install --upgrade huggingface-hub -qqq
+
+# ch7
+!pip install transformers==4.40.1 accelerate==0.30.0 bitsandbytes==0.43.1 auto-gptq==0.7.1 autoawq==0.2.5 optimum==1.19.1 -qqq
+
+# ch8
+!pip install transformers==4.40.1 accelerate==0.30.0 bitsandbytes==0.43.1 datasets==2.19.0 vllm==0.4.1 openai==1.25.1 -qqq
+
+# ch9
+!pip install datasets llama-index==0.10.34 langchain-openai==0.1.6 "nemoguardrails[openai]==0.8.0" openai==1.25.1 chromadb==0.5.0 wandb==0.16.6 -qqq
+!pip install llama-index-callbacks-wandb==0.1.2 -qqq
+
+# ch10
+!pip install transformers==4.40.1 datasets==2.19.0 sentence-transformers==2.7.0 faiss-cpu==1.8.0 llama-index==0.10.34 llama-index-embeddings-huggingface==0.2.0 -qqq
+
+# ch11
+!pip install sentence-transformers==2.7.0 datasets==2.19.0 huggingface_hub==0.23.0 faiss-cpu==1.8.0 -qqq
+
+# ch12
+!pip install pinecone-client==3.2.2 sentence-transformers==2.7.0 datasets==2.19.0 faiss-cpu==1.8.0 transformers==4.40.1 openai==1.25.2 llama-index==0.10.34 llama-index-vector-stores-pinecone==0.1.6  -qqq
+
+# ch14
+!pip install transformers==4.40.1 -qqq
+
+# ch15
+!pip install "pyautogen[retrievechat]==0.2.6" -qqq
+
+```
+
+
 ## LLM의 기본부터 모델 학습, 임베딩, 벡터 데이터베이스로 만드는 RAG까지
 
 ### 허정준 지음 | 정진호 그림 | 박재호 감수
